@@ -31,7 +31,13 @@ const app = express();
 app.use(express.json());
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://password-manager-sooty-one.vercel.app'
+  ],
+  credentials: true
+}));
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://akashvekariya010:ljed3sGHZU7T0mpi@cluster0.qn2fyjc.mongodb.net/securepass';
