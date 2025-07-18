@@ -1,0 +1,73 @@
+const tasks = [
+    {
+      name: "Setup Project Structure",
+      description: "Initialize React and Node.js projects with proper folder structures.",
+      status: "completed"
+    },
+    {
+      name: "Connect MongoDB",
+      description: "Use Mongoose to connect and define basic schema for credentials.",
+      status: "completed"
+    },
+    {
+      name: "Create Credential Schema",
+      description: "Create Mongoose schema with fields: email/username, password, 2faKey, uniqueId, createdAt.",
+      status: "completed"
+    },
+    {
+      name: "Encrypt Stored Data",
+      description: "Use crypto or bcrypt to encrypt password and 2FA key before saving.",
+      status: "completed"
+    },
+    {
+      name: "Backend API - Add Credential",
+      description: "POST /api/credentials to add a new credential with encrypted data.",
+      status: "completed"
+    },
+    {
+      name: "Backend API - Get Credential by Link",
+      description: "GET /api/credentials/:uniqueId to fetch and decrypt credentials.",
+      status: "completed"
+    },
+    {
+      name: "Generate TOTP from 2FA Key",
+      description: "Use speakeasy or otplib to generate OTP every 30 seconds.",
+      status: "completed"
+    },
+    {
+      name: "Frontend UI - Add Credential Form",
+      description: "Create a Tailwind form to input username/email, password, 2FA key.",
+      status: "completed"
+    },
+    {
+      name: "Frontend UI - OTP Display Page",
+      description: "Page to view decrypted data and real-time updating OTP.",
+      status: "completed"
+    },
+    {
+      name: "Generate Unique Link on Save",
+      description: "Use UUID or NanoID to generate short URL for each entry.",
+      status: "pending"
+    },
+    {
+      name: "Add QR Code Generation for 2FA",
+      description: "Generate a QR code from 2FA key using `qrcode` npm package, display it in UI to scan with apps like Google Authenticator.",
+      status: "completed"
+    },
+    {
+      name: "Add Expiry for Unique Links",
+      description: "Add expiry timestamp to credential records, and invalidate access to credentials after expiration time.",
+      status: "completed"
+    },
+    {
+      name: "Deploy Backend",
+      description: "Deploy Node.js server on Render/VPS with env support.",
+      status: "pending"
+    },
+    {
+      name: "Deploy Frontend",
+      description: "Deploy React app on Vercel/Netlify with API URL config.",
+      status: "pending"
+    }
+  ];
+  
