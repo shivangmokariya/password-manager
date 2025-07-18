@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { API_BASE_URL } from './config';
 
 function OTPDisplay() {
   const { uniqueId } = useParams();
@@ -10,7 +11,7 @@ function OTPDisplay() {
   const [timer, setTimer] = useState(30);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/credentials/${uniqueId}`)
+    fetch(`${API_BASE_URL}/api/credentials/${uniqueId}`)
       .then(res => res.json())
       .then(data => {
         if (data.error) setError(data.error);
@@ -20,7 +21,7 @@ function OTPDisplay() {
   }, [uniqueId]);
 
   const fetchOtp = (twofaKey) => {
-    fetch('http://localhost:5000/api/totp/generate', {
+    fetch(`${API_BASE_URL}/api/totp/generate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

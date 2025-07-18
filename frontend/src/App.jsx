@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
+import { API_BASE_URL } from './config';
 
 function App() {
   const [form, setForm] = useState({
@@ -20,7 +21,7 @@ function App() {
     setSuccess('');
     setError('');
     try {
-      const res = await fetch('http://localhost:5000/api/credentials', {
+      const res = await fetch(`${API_BASE_URL}/api/credentials`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
